@@ -10,6 +10,9 @@ const createStore = () =>{
       ]
     }),
     actions: {
+      async fetchArticles({commit}){
+        await axios.get(url)
+      },
       async postArticle({commit}, article) {
         await axios.post(url,article)
       }

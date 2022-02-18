@@ -1,14 +1,18 @@
 <template>
   <div>
     <AddArticle/>
-    <h1>記事一覧</h1>
+    <IndexArticle/>
   </div>
 </template>
 
 <script>
 import AddArticle from "./AddArticle"
+import IndexArticle from "./IndexArticle"
 export default {
-  components:{ AddArticle}
+  components: { 
+    AddArticle,
+    IndexArticle
+  }
 }
 </script>
 
