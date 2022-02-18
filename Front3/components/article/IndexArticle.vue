@@ -12,10 +12,10 @@ export default {
     
   },
   methods: {
-    ...mapActions(['ferchArticles']),
+    ...mapActions(['fetchArticles']),
   },
   created (){
-    this.ferchArticles()
+    this.fetchArticles()
   }
 }
 </script>
