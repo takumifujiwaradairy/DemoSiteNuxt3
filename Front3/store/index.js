@@ -10,9 +10,9 @@ const createStore = () =>{
       ]
     }),
     actions: {
-      async postArticle({commit}, article) {
-        await axios.post(url,article).then(response => {
-          commit('addArticle',response.data)
+      async postArticle({ commit }, article) {
+        await axios.post(url, article).then(response => {
+          commit('addArticle', response.data)
         })
       }
     },
