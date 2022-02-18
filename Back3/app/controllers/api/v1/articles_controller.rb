@@ -22,6 +22,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article.).permit(:title, :body)
+    params.require(:article).permit(:title, :body)
   end
 end
