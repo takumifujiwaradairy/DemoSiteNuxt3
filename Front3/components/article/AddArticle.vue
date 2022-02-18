@@ -21,10 +21,10 @@ export default {
   },
   methods: { 
     post: function() {
-      const article = {title: this.title, body: this.body}
-      this.$store.dispatch('postArticle', article);
+      this.$store.dispatch('postArticle', { title: this.title, body: this.body });
       this.title = '',
-      this.body = ''
+      this.body = '',
+      this.$router.push("/");
     }
   }
 }

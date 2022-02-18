@@ -8,9 +8,9 @@ class Api::V1::ArticlesController < ApplicationController
   def create
     article = Article.new(article_params)
     if article.save
-      render json: { status: 'success', data: article }
+      render json:  article 
     else
-      render json: { status: 'error', data: article }
+      render json: article.errors, status: 422
     end
   end
 
