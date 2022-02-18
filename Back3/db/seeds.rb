@@ -8,4 +8,4 @@
 
 Article.create(title: '今日のごはん', body: '味噌汁、ご飯')
 Article.create(title: '昨日のごはん', body: 'パン、サラダ')
-Article.create(title: '一昨日のごはん', body: 'ハンバーグ、オムレス')
+Article.create(title: '一昨日のごはん', body: 'ハンバーグ、オムレツ')
