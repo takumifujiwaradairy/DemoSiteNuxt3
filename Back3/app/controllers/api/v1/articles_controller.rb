@@ -6,6 +6,12 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def create
+    article = Article.new(article_params)
+    if article.save
+      render json: article 
+    else
+      render json: article.errors, status: 422
+    end
   end
 
   def destroy
@@ -16,5 +22,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   private
   def article_params
+    params.require(:article).permit(:title, :body)
   end
 end
