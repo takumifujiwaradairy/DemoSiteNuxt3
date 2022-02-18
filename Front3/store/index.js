@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import axios from 'axios';
 
-const url = 'http://localhost:3000//api/v1/articles'
+const url = 'http://localhost:3000/api/v1/articles'
 
 const createStore = () =>{
   return new Vuex.Store({
