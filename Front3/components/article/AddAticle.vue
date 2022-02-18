@@ -6,7 +6,7 @@
         <input v-model="title">
         <label>内容</label>
         <textarea v-model="body"></textarea>
-        <button>送信</button>
+        <button @click="post">送信</button>
       </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
       const article = {title: this.title, body: this.body}
       this.$store.dispatch('postArticle', article);
       this.title = '',
-      this.content = ''
+      this.body = ''
     }
   }
 }
