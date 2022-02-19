@@ -9,12 +9,17 @@
       <label>記事の中身</label>
       <li>{{ article.body }}</li>
     </ul>
+    <DeleteArticle/>
   </div>
 </template>
 
 <script>
+import DeleteArticle from "./DeleteArticle";
 import { mapActions, mapGetters } from 'vuex';
 export default {
+  components: {
+    DeleteArticle
+  },
   computed: { 
     ...mapGetters(['getArticles']),
   },
