@@ -20,7 +20,7 @@ const createStore = () =>{
           commit('addArticle', response.data)
         })
       },
-      async fetchArticles({commit}){
+      async fetchArticles({ commit }){
         await axios.get(url).then(responce => {
           commit('setArticle', responce.data)
         })
