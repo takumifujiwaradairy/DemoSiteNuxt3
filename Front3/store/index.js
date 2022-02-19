@@ -16,7 +16,10 @@ const createStore = () =>{
         })
       },
       async fetchArticles({commit}){
-        await axios.get(url)
+        await axios.get(url).then(responce =>{
+          const articles = responce.data.data
+          commit('setArticle', articles)
+        })
       },
     },
     mutations: {
