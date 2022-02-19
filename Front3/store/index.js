@@ -15,18 +15,18 @@ const createStore = () =>{
       } 
     },
     actions: {
-      async fetchArticles({　commit　}){
+      async fetchArticles({commit}){
         await axios.get(url).then(responce =>{
           const articles = responce.data.data
           commit('setArticle', articles)
         })
       },
-      async postArticle({　commit　}, article) {
+      async postArticle({commit}, article) {
         await axios.post(url,article).then(response => {
           commit('addArticle',response.data)
         })
       },
-      async fetchArticles({　commit　}){
+      async fetchArticles({commit}){
         await axios.get(url).then(responce => {
           commit('setArticle', responce.data)
         })
