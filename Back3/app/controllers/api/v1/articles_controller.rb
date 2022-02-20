@@ -18,7 +18,7 @@ class Api::V1::ArticlesController < ApplicationController
 
   def destroy
     article = Article.find(params[:id])
-    article.destroy!
+    article.destroy
   end
 
   def update
