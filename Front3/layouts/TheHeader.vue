@@ -5,9 +5,9 @@
     </div>
     <div class="header-link">
       <ul>
-        <li>新規登録</li>
-        <li>ログイン</li>
-        <li>会員解除</li>
+        <nuxt-link to="/user/signup">新規登録</nuxt-link>
+        <nuxt-link to="/user/login">ログイン</nuxt-link>
+        <nuxt-link to="/user/signout">会員解除</nuxt-link>
       </ul>
     </div>
   </header>
