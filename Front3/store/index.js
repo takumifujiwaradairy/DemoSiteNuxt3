@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const url = '/api/articles'
 
+
 const createStore = () =>{
   return new Vuex.Store({
     state: () => ({
@@ -31,10 +32,14 @@ const createStore = () =>{
           commit('setArticle', responce.data)
         })
       },
-      async deleteArticle({ commit },id){
+      async deleteArticle({ commit }, id){
         await axios.delete(`${url}/${id}`).then(responce => {
           commit('removeArticle', responce.data)
         })
+      },
+      async AddLike({ commit }, id){
+        console.log(id);
+        await axios.post(`${url}/${id}/likes`)
       }
     },
     mutations: {
