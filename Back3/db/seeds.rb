@@ -8,3 +8,7 @@
 Article.create(title: '今日のごはん', body: '味噌汁、ご飯')
 Article.create(title: '昨日のごはん', body: 'パン、サラダ')
 Article.create(title: '一昨日のごはん', body: 'ハンバーグ、オムレツ')
+
+User.create(name: 'スズキ',email: "aaa@gmail.com", password:"AAAAAA")
+User.create(name: 'サイトウ',email: "bbb@gmail.com", password:"BBBBBB")
+User.create(name: 'ヤマダ',email: "ccc@gmail.com", password:"CCCCCC")
