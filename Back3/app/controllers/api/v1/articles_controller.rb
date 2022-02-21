@@ -9,6 +9,7 @@ class Api::V1::ArticlesController < ApplicationController
 
   def create
     article = Article.new(article_params)
+    article.user_id = current_user.id
     if article.save
       render json: article 
     else
