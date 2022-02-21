@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="addLike(id)">Like</button>
-    <button @click="disLike(id)">DidLike</button>
+    <button @click="disLike(id)">DisLike</button>
     {{id}}
   </div>
 </template>

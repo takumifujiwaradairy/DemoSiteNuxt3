@@ -1,7 +1,10 @@
 class Api::V1::ArticlesController < ApplicationController
   def index
-    articles = Article.all
-    render json:  articles
+    articles = Article.all.map do |article|
+      article.likes_count = article.likes.count
+      article
+    end
+    render json: articles.to_json(methods: [:likes_count])
   end
 
   def show
@@ -11,7 +14,7 @@ class Api::V1::ArticlesController < ApplicationController
     article = Article.new(article_params)
     article.user_id = current_user.id
     if article.save
-      render json: article 
+      render json: article.to_json(methods: [:likes_count])
     else
       render json: article.errors, status: 422
     end

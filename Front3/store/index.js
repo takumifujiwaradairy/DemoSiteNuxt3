@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const url = '/api/articles'
 
-
 const createStore = () =>{
   return new Vuex.Store({
     state: () => ({
@@ -38,10 +37,14 @@ const createStore = () =>{
         })
       },
       async addLike({ commit }, id){
-        await axios.post(`${url}/${id}/likes`, {like: {article_id: id}})
+        await axios.post(`${url}/${id}/likes`).then(response => {
+          commit('addLike', { id: id, count: response.data })
+        })
       },
       async disLike({ commit }, id){
-        await axios.delete(`${url}/${id}/likes`)
+        await axios.delete(`${url}/${id}/likes`).then(response => {
+          commit('disLike', { id: id, count: response.data })
+        })
       }
     },
     mutations: {
@@ -50,6 +53,12 @@ const createStore = () =>{
       removeArticle: (state, id) => {
         const index = state.articles.findIndex((article) => article.id === id);
         state.articles.splice(index, 1);
+      },
+      addLike: (state, { id, count }) => {
+        const index = state.articles.findIndex((article) => article.id === id);
+        const article = state.articles[index]
+        article.likes_count = count;
+        state.articles.splice(index, 1, article)
       }
     }
   })
