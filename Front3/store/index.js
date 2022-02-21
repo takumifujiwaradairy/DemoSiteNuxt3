@@ -24,7 +24,7 @@ const createStore = () =>{
       },
       async postArticle({ commit }, article) {
         await axios.post(url,article).then(response => {
-          commit('addArticle',response.data)
+          commit('addArticle', response.data)
         })
       },
       async fetchArticles({ commit }){
@@ -38,8 +38,7 @@ const createStore = () =>{
         })
       },
       async AddLike({ commit }, id){
-        console.log(id);
-        await axios.post(`${url}/${id}/likes`)
+        await axios.post(`${url}/${id}/likes`, {like: {article_id: id}})
       }
     },
     mutations: {

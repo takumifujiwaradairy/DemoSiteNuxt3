@@ -12,9 +12,6 @@ export default {
   props: ['id'],
   methods: {
     ...mapActions(['AddLike']),
-    Like: function() {
-      
-    }
   }
 }
 </script>
