@@ -11,16 +11,19 @@
       <label>筆者の番号</label>
       <li>{{ article.user_id }}</li>
       <DeleteArticle :id="article.id"/>
+      <AddLike :id="article.id"/>
     </ul>
   </div>
 </template>
 
 <script>
 import DeleteArticle from "./DeleteArticle";
+import AddLike from "./AddLike";
 import { mapActions, mapGetters } from 'vuex';
 export default {
   components: {
-    DeleteArticle
+    DeleteArticle,
+    AddLike
   },
   computed: { 
     ...mapGetters(['getArticles']),
