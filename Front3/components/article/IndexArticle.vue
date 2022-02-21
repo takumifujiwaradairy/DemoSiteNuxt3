@@ -8,6 +8,8 @@
       <li>{{ article.title }}</li>
       <label>記事の中身</label>
       <li>{{ article.body }}</li>
+      <label>筆者の番号</label>
+      <li>{{ article.user_id }}</li>
       <DeleteArticle :id="article.id"/>
     </ul>
   </div>
