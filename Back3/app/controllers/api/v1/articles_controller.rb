@@ -18,6 +18,8 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def destroy
+    article = current_user.articles.find(params[:id])
+    article.destroy
   end
 
   def update
