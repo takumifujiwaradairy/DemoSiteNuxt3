@@ -1,15 +1,14 @@
 <template>
   <div>
-    <button @click="addLike(id)">Like</button>
-    <button @click="disLike(id)">DidLike</button>
-    {{id}}
+    <button v-if="is_like" @click="disLike(id)">DidLike</button>
+    <button v-else @click="addLike(id)">Like</button>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 export default {
-  props: ['id'],
+  props: ['id', 'is_like'],
   methods: {
     ...mapActions(['addLike', 'disLike']),
   }
