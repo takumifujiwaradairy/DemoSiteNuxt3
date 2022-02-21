@@ -18,7 +18,7 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   def destroy
-    article = Article.find(params[:id])
+    article = current_user.articles.find(params[:id])
     article.destroy
   end
 
@@ -27,6 +27,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :body, :id)
+    params.require(:article).permit(:title, :body)
   end
 end
