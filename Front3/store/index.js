@@ -39,6 +39,9 @@ const createStore = () =>{
       },
       async addLike({ commit }, id){
         await axios.post(`${url}/${id}/likes`, {like: {article_id: id}})
+      },
+      async disLike({ commit }, id){
+        await axios.delete(`${url}/${id}/likes`)
       }
     },
     mutations: {
