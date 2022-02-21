@@ -4,6 +4,10 @@ class Api::V1::LikesController < ApplicationController
     like.save
   end
 
+  def destroy
+    current_user.likes.destroy(likes_params)
+  end
+
   private
   def likes_params
     params.require(:like).permit(:article_id)
