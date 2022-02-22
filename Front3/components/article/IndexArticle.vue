@@ -13,7 +13,7 @@
       <label>この記事のLikeの合計</label>
       <li>{{ article.likes_count }}</li>
       <DeleteArticle :id="article.id"/>
-      <AddLike :id="article.id"/>
+      <AddLike :id="article.id" :is_like="article.is_like"/>
     </ul>
   </div>
 </template>
