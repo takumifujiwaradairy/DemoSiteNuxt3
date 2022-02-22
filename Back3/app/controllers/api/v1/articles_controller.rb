@@ -1,6 +1,5 @@
 class Api::V1::ArticlesController < ApplicationController
   def index
-    likes_article_ids = current_user.likes.pluck(:article_id)
     articles = Article.all.map do |article|
       article.likes_count = article.likes.count
       article

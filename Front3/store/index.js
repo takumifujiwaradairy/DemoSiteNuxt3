@@ -37,7 +37,7 @@ const createStore = () =>{
         })
       },
       async addLike({ commit }, id){
-        await axios.post(`${url}/${id}/likes`, {like: { article_id: id }}).then(response => {
+        await axios.post(`${url}/${id}/likes`).then(response => {
           commit('addLike', { id: id, count: response.data })
         })
       },
@@ -60,13 +60,6 @@ const createStore = () =>{
         article.likes_count = count;
         article.is_like = true;
         state.articles.splice(index, 1, article)
-      },
-      disLike: (state, { id, count }) => {
-        const index = state.articles.findIndex((article) => article.id === id);
-        const article = state.articles[index];
-        article.likes_count = count;
-        article.is_like = false;
-        state.articles.splice(index, 1, article);
       }
     }
   })
